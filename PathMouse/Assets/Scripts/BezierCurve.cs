@@ -7,7 +7,8 @@ public class BezierCurve : MonoBehaviour
     public List<Transform> controlPoints = new List<Transform>();
 
     [Header("Configuração")]
-    public int resolution = 20;
+    [Range(10, 200)]
+    public int resolution = 50;
 
     [HideInInspector]
     public List<Vector3> curvePoints = new List<Vector3>();

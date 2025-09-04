@@ -7,7 +7,7 @@ public class CatMullRomCurve : MonoBehaviour
     public List<Transform> controlPoints = new List<Transform>();
 
     [Header("Configuração da curva")]
-    public int curveResolution = 20; // quantos pontos por segmento
+    public int curveResolution = 20;
 
     [HideInInspector]
     public List<Vector3> curvePoints = new List<Vector3>();
@@ -35,7 +35,6 @@ public class CatMullRomCurve : MonoBehaviour
             return;
         }
 
-        // cria lista estendida com cópias
         List<Vector3> extended = new List<Vector3>(controlPoints.Count + 2);
         extended.Add(controlPoints[0].position);
         foreach (var t in controlPoints) extended.Add(t.position);
