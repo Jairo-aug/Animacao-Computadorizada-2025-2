@@ -5,7 +5,7 @@ Repositório com os projetos desenvolvidos para a **Atividade Acadêmica Animaç
 ---
 
 ## 👤 Nome Completo
-- **NJairo Augusto de Campos Alff**
+- **Jairo Augusto de Campos Alff**
 - **Brenda Lessa Almeida**
 
 ---
