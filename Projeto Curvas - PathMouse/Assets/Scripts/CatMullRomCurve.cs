@@ -37,12 +37,11 @@ public class CatMullRomCurve : MonoBehaviour
             return;
         }
 
-        // Se quiser curva fechada, adiciona também o primeiro ponto no final
         List<Vector3> extended = new List<Vector3>(controlPoints.Count + 3);
-        extended.Add(controlPoints[controlPoints.Count - 1].position); // conecta fim com início
+        extended.Add(controlPoints[controlPoints.Count - 1].position);
         foreach (var t in controlPoints) extended.Add(t.position);
         extended.Add(controlPoints[0].position);
-        extended.Add(controlPoints[1].position); // ajuda a suavizar a volta
+        extended.Add(controlPoints[1].position); 
 
         float step = 1f / curveResolution;
 

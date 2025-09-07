@@ -12,34 +12,34 @@ public class RatFollower : MonoBehaviour
     public KeyCode switchKey = KeyCode.Space; // tecla para trocar curva
 
     [Header("Câmeras")]
-    public Camera catmullCamera; // arraste a Main Camera aqui
-    public Camera bezierCamera;  // arraste a BezierCamera aqui
+    public Camera catmullCamera;
+    public Camera bezierCamera;
 
     private List<Vector3> currentPath;
     private int currentIndex = 0;
-    private bool onBezier = false;
+    private bool onBezier = true; // agora começa no Bézier
 
     void Start()
     {
-        // começa no Catmull
-        catmullRomCurve.GenerateCurve();
-        currentPath = catmullRomCurve.curvePoints;
+        // Inicia com a curva Bézier
+        bezierCurve.GenerateCurve();
+        currentPath = bezierCurve.curvePoints;
         currentIndex = 0;
+        onBezier = true;
 
-        // ativa a câmera inicial
-        if (catmullCamera != null) catmullCamera.gameObject.SetActive(true);
-        if (bezierCamera != null) bezierCamera.gameObject.SetActive(false);
+        // Ativa a câmera do Bézier
+        if (bezierCamera != null) bezierCamera.gameObject.SetActive(true);
+        if (catmullCamera != null) catmullCamera.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (currentPath == null || currentPath.Count == 0) return;
 
-        // --- Movimento do rato ---
+        // Movimento do rato ao longo do caminho
         Vector3 target = currentPath[currentIndex];
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
-        // Olhar sempre para a próxima bolinha
         Vector3 lookTarget = (currentIndex + 1 < currentPath.Count)
             ? currentPath[currentIndex + 1]
             : target;
@@ -47,40 +47,39 @@ public class RatFollower : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(lookTarget - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 5f);
 
-        // Chegou no ponto atual → vai para o próximo
+        // Quando atinge o ponto alvo, avança para o próximo
         if (Vector3.Distance(transform.position, target) < 0.05f)
         {
             currentIndex++;
             if (currentIndex >= currentPath.Count)
             {
-                // volta para o início e continua em loop
                 currentIndex = 0;
                 transform.position = currentPath[0];
             }
         }
 
-        // --- Troca de curva ao apertar tecla ---
+        // Alterna entre Bézier e Catmull-Rom ao apertar a tecla definida
         if (Input.GetKeyDown(switchKey))
         {
-            if (!onBezier)
+            if (onBezier)
             {
-                bezierCurve.GenerateCurve();
-                currentPath = bezierCurve.curvePoints;
-                onBezier = true;
-
-                // troca para câmera da Bézier
-                if (catmullCamera != null) catmullCamera.gameObject.SetActive(false);
-                if (bezierCamera != null) bezierCamera.gameObject.SetActive(true);
-            }
-            else
-            {
+                // Troca para Catmull-Rom
                 catmullRomCurve.GenerateCurve();
                 currentPath = catmullRomCurve.curvePoints;
                 onBezier = false;
 
-                // troca para câmera da Catmull
                 if (bezierCamera != null) bezierCamera.gameObject.SetActive(false);
                 if (catmullCamera != null) catmullCamera.gameObject.SetActive(true);
+            }
+            else
+            {
+                // Troca para Bézier
+                bezierCurve.GenerateCurve();
+                currentPath = bezierCurve.curvePoints;
+                onBezier = true;
+
+                if (catmullCamera != null) catmullCamera.gameObject.SetActive(false);
+                if (bezierCamera != null) bezierCamera.gameObject.SetActive(true);
             }
 
             currentIndex = 0;
