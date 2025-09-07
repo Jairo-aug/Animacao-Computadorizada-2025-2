@@ -45,7 +45,7 @@ Principais scripts e suas funções:
 
 ## 🔗 Link para a Build
 Jogue online ou faça o download aqui:  
-[**Itch.io - Nome do Jogo**](https://jairo-augusto.itch.io/teste-curvas-bezier-com-ratinho)
+[**Itch.io - Projeto Curvas e Movimento — Bezier vs Catmull-Rom**]([https://jairo-augusto.itch.io/teste-curvas-bezier-com-ratinho](https://jairo-augusto.itch.io/teste-curvas-bezier-com-ratinho)
 
 ---
 
