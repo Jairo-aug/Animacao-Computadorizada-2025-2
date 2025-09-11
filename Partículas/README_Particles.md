@@ -49,7 +49,7 @@ Principais scripts e suas funções:
 
 ## 🔗 Link para a Build
 Teste o sistema de partículas ou faça o download aqui:  
-[**Itch.io - Projeto Sistema de Partículas**](https://jairo-augusto.itch.io/projeto-sistema-particulas)
+[**Itch.io - Projeto Sistema de Partículas**][(https://jairo-augusto.itch.io/projeto-sistema-particulas)](https://jairo-augusto.itch.io/projetos-animacao-computadorizada)
 
 ---
 
