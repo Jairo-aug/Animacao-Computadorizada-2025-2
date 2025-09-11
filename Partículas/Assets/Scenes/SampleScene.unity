@@ -352,12 +352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933e6be64b838e46bc3c8bdffce2e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 4216693115035103927, guid: d86f4555438d6a84cb67bee926906434, type: 3}
+  particlePrefab: {fileID: 5544248340637879831, guid: f6efec8ba278f2848a99b6db7d29277f, type: 3}
   initialPool: 200
   emitterType: 1
   settings:
-    startColor: {r: 1, g: 1, b: 1, a: 1}
-    endColor: {r: 1, g: 1, b: 1, a: 0}
+    startColor: {r: 0.8113208, g: 0.2793699, b: 0.4896338, a: 1}
+    endColor: {r: 0.9245283, g: 0.5800107, b: 0.7168045, a: 0}
     startScale: 0.2
     endScale: 0.05
     lifetime: 2
@@ -509,12 +509,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933e6be64b838e46bc3c8bdffce2e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePrefab: {fileID: 4216693115035103927, guid: d86f4555438d6a84cb67bee926906434, type: 3}
+  particlePrefab: {fileID: 2871659348943545202, guid: 57bc949b0fff66c448ad6f98906b5fa9, type: 3}
   initialPool: 200
   emitterType: 2
   settings:
-    startColor: {r: 1, g: 1, b: 1, a: 1}
-    endColor: {r: 1, g: 1, b: 1, a: 0}
+    startColor: {r: 1, g: 0.59621054, b: 0, a: 1}
+    endColor: {r: 1, g: 0.8279877, b: 0, a: 0}
     startScale: 0.2
     endScale: 0.05
     lifetime: 2
@@ -628,8 +628,8 @@ MonoBehaviour:
   initialPool: 200
   emitterType: 0
   settings:
-    startColor: {r: 1, g: 1, b: 1, a: 1}
-    endColor: {r: 1, g: 1, b: 1, a: 0}
+    startColor: {r: 0.16470589, g: 0.47450984, b: 0.654902, a: 1}
+    endColor: {r: 0.16470586, g: 0.6255309, b: 0.654902, a: 0}
     startScale: 0.2
     endScale: 0.05
     lifetime: 2

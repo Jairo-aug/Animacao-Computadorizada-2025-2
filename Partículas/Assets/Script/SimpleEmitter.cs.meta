@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - particlePrefab: {fileID: 4216693115035103927, guid: d86f4555438d6a84cb67bee926906434, type: 3}
+  - particlePrefab: {fileID: 5544248340637879831, guid: f6efec8ba278f2848a99b6db7d29277f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
